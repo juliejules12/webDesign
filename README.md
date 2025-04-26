@@ -1,6 +1,7 @@
 # Portfolio Website
 
 **Group 276** - Portfolio Website Project  
+*Created by Julieta Yes and Team Members*
 
 ---
 
@@ -56,25 +57,3 @@ The website showcases skills, services, portfolio work, and a contact section.
 
 ```bash
 git clone https://github.com/juliejules12/webDesign.git
-Then open index.html in your browser.
-
-📈 Technologies Used
-HTML5
-
-CSS3
-
-Bootstrap 5
-
-Google Fonts
-
-Font Awesome
-
-🧪 Evaluation Rubric
-
-Criteria	Weight
-Functionality & Requirements	30%
-Code Quality & Structure	20%
-UI/UX & Responsiveness	20%
-Collaboration & Teamwork	10%
-Creativity / Extra Features	10%
-Presentation (README, demo)	10%
