@@ -1,116 +1,87 @@
-aPortfolio Website - Julieta Yes
-📄 Project Overview
-This is a group project: a responsive personal portfolio website for Julieta Yes.
-It highlights skills, services, previous work, and focuses heavily on modern design, clean coding, and mobile responsiveness.
+Portfolio Website
+Group 276 - Portfolio Website Project
 
-The website was built using:
 
+📚 Overview
+This project is a responsive portfolio website built using HTML, CSS, and Bootstrap.
+The website showcases the creator's skills, services, portfolio work, and a contact section for collaboration opportunities.
+
+🛠️ Solution Approach
+Design: We aimed for a modern, clean, and minimalistic design.
+
+Development: Used HTML for structure, CSS for styling, and Bootstrap for responsiveness.
+
+Responsiveness: Ensured the website looks great across all device sizes.
+
+Collaboration: Tasks were divided among team members to ensure smooth workflow and collaboration.
+
+🌟 Features
+🖥️ Responsive Design (Mobile-Friendly)
+
+📜 Clean Navigation Bar
+
+🧑‍💼 About Section
+
+🛠️ Services Section
+
+🧠 Skills with Progress Bars
+
+🖼️ Portfolio Gallery
+
+✉️ Contact Section
+
+👣 Footer with Credits
+
+📸 Demo Screenshot
+
+(Make sure your screenshot.png is inside the images/ folder.)
+
+🌐 Live Demo
+View the live site here:
+👉 Portfolio Live Website
+
+🤝 Team Members
+– Frontend Development, Design
+
+– Content and Research
+
+Juliet.Ayesa– Testing and Deployment
+
+Group 276 – Collaborators
+
+🚀 How to Run Locally
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone https://github.com/juliejules12/webDesign.git
+Open the index.html file directly in your browser.
+
+📈 Technologies Used
 HTML5
 
 CSS3
 
-Bootstrap 5.3
+Bootstrap 5
 
-Font Awesome
+Google Fonts
 
-Custom images and illustrations.
+Font Awesome Icons
 
-👥 Team Members
-Member 1: [Name]
-
-Member 2: [Name]
-
-Member 3: [Name]
-
-Member 4: [Name]
-
-🎯 Features
-Fully responsive on all devices
-
-Hero section with personal introduction
-
-About Me section (biography + contact info)
-
-Services overview
-
-Skills with animated progress bars
-
-Portfolio Gallery showcasing works
-
-Social media links in footer
-
-Smooth hover effects and card animations
-
-🛠 Technologies Used
-HTML5
-
-CSS3 (custom + Bootstrap)
-
-Bootstrap 5.3
-
-Font Awesome 5
-
-Google Fonts (Poppins)
-
-🧠 Solution Approach
-Used Bootstrap grid system for layout flexibility.
-
-Created a custom CSS file for additional styling (animations, transitions).
-
-Applied best practices in responsive web design and UI/UX principles.
-
-Focused on clean code, proper HTML structure, and accessibility.
-
-Team members worked in separate branches and merged after review.
-
-📸 Demo
-🔗 Live Demo Link
-
-(Replace yourusername with your actual GitHub username and repository name if different.)
-
-📁 Folder Structure
-bash
-Copy
-Edit
-/ (root)
-│
-├── index.html
-├── style.css
-├── images/
-│   ├── hero.png
-│   ├── about.png
-│   ├── skills.png
-│   ├── portfolio/ (gallery images)
-└── README.md
-🚀 How to Run Locally
-Clone the repo:
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/portfolio-website.git
-Navigate into the project folder:
-
-bash
-Copy
-Edit
-cd portfolio-website
-Open index.html in your browser.
-
-📋 Evaluation Criteria (Rubric)
+🧪 Evaluation Criteria (Rubric)
 
 Criteria	Weight
-Functionality & Requirements Met	30%
+Functionality & Requirements	30%
 Code Quality & Structure	20%
 UI/UX & Responsiveness	20%
 Collaboration & Teamwork	10%
 Creativity / Extra Features	10%
 Presentation (README, demo)	10%
-🤝 Collaboration Workflow
-Used GitHub repository (one repo for the whole group)
+📝 Future Improvements
+Add interactive animations (e.g., scroll animations).
 
-Divided work among frontend design, backend code (if needed), testing, and deployment.
+Integrate a working contact form (backend email support).
 
-Regular code reviews and pull requests.
+Optimize images and assets for faster loading.
 
-Resolved merge conflicts together and kept code well-commented.
