@@ -1,22 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UI Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Watson - UI Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        .green-btn {
+            background-color: #0c9;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+        .green-btn:hover {
+            background-color: #0b8;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #0a252d;
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .navbar-brand svg {
+            margin-right: 8px;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        .navbar-dark .navbar-toggler {
+            border-color: rgba(255,255,255,0.1);
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .icons-wrapper i {
+            color: white;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+
+        /* Side Menu */
+        .side-menu {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0a252d;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            padding: 20px 15px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .side-menu a {
+            color: white;
+            margin: 10px 0;
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #0a252d;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            max-width: 80%;
+        }
+
+        .outline-btn {
+            background-color: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            padding: 10px 25px;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .outline-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Biography Section */
+        .biography {
+            padding: 100px 0;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .biography small {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .biography h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 15px 0 25px;
+        }
+
+        .biography p {
+            margin-bottom: 30px;
+        }
+
+        .info-label {
+            font-weight: 600;
+        }
+
+        .social-text {
+            margin-right: 15px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #0c9;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .skill-name {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background-color: #0c9;
+            border-radius: 3px;
+            margin-bottom: 25px;
+        }
+
+        .skill-info {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: #0c9;
+            margin-bottom: 20px;
+        }
+
+        .service-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            color: #666;
+        }
+
+        /* Specialties Section */
+        .specialties {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .specialty-icon {
+            color: #0c9;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .specialty-item h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .specialty-item {
+            margin-bottom: 30px;
+        }
+
+        /* Stats Counter */
+        .stats {
+            margin-top: 50px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a252d;
+            color: white;
+            padding: 50px 0 30px;
+        }
+
+        footer .navbar-brand {
+            margin-bottom: 20px;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+        }
+
+        .footer-social a {
+            color: white;
+            margin-left: 15px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            .side-menu {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+                padding: 70px 0;
+            }
+            .hero p {
+                max-width: 100%;
+            }
+            .biography, .skills, .services, .specialties, .portfolio {
+                padding: 70px 0;
+            }
+            .stat-item {
+                margin-bottom: 30px;
+            }
+            .footer-contact {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Content will go here -->
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    UI Portfolio
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="green-btn ms-3">Hire Me</a>
+                    <div class="icons-wrapper ms-3">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Side Navigation -->
+    <div class="side-menu">
+        <a href="#" title="Back"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" title="Download"><i class="fas fa-download"></i></a>
+        <a href="#" title="Play"><i class="fas fa-play"></i></a>
+    </div>
 
-</body>
-</html>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1>Hi, I'm John Watson</h1>
+                    <h2>Web Designer</h2>
+                    <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I can give your business a new Creative start right away!</p>
+                    <div>
+                        <button class="green-btn">Hire Me</button>
+                        <button class="outline-btn">My Portfolio</button>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-5 mt-lg-0">
+                    <img src="hero.jpeg" alt="John Watson" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="biography">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <img src="bio.jpeg" alt="Profile Picture" class="profile-img">
+                </div>
+                <div class="col-lg-7">
+                    <small>MY BIOGRAPHY</small>
+                    <h2>A Lead UI Designer & Web Developer Based In UK</h2>
+                    <p>I love Graphic design and Photography and have been working on my portfolio since 2016. I can give your business a new Creative start right away! Contact me and we will discuss your projects!</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <span class="info-label">Name:</span> John Watson
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span class="info-label">From:</span> London, UK
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span class="info-label">Email:</span> example@mail.com
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <span class="info-label">Phone:</span> +21 234 567 8901
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <span class="social-text">Follow me on</span>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <a href="#" class="green-btn">Hire me</a>
+                        <a href="#" class="outline-btn text-dark">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="op.jpeg" alt="Skills" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <p class="skill-info">I Specialize in Branding and Strategy, and am passionate about creating Awesome Portfolio work. And I always ready to impress the audience with my Creativity.</p>
+                    
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-bar" style="width:90%"></div>
+                    
+                    <div class="skill-name">Ideas & Technology</div>
+                    <div class="skill-bar" style="width:85%"></div>
+                    
+                    <div class="skill-name">Branding Design</div>
+                    <div class="skill-bar" style="width:80%"></div>
+                    
+                    <div class="skill-name">Responsive Web Design</div>
+                    <div class="skill-bar" style="width:95%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What I Do For You</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>App development</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Photography</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit accusa ntium dolor emque laudan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="text-decoration-none" style="color:#0c9">More Services <i class="fas fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section class="specialties">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="/api/placeholder/600/500" alt="Work Desk" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="specialty-item">
+                                <div class="specialty-icon">
+                                    <i class="fab fa-wordpress"></i>
+                                </div>
+                                <h4>Web Development</h4>
+                                <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specialty-item">
+                                <div class="specialty-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
+                                <h4>Design Trends</h4>
+                                <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specialty-item">
+                                <div class="specialty-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>Research & Analysis</h4>
+                                <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="specialty-item">
+                                <div class="specialty-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h4>Customer support</h4>
+                                <p>Lorem ipsum viverra libero set. Pellen ut justo, in ligula at.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Counter -->
+            <div class="row stats text-center">
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">135</div>
+                        <div class="stat-text">Finished Projects</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">225</div>
+                        <div class="stat-text">Working Hours</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">115</div>
+                        <div class="stat-text">Online Support</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <div class="stat-number">272</div>
+                        <div class="stat-text">Happy Customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Success Work</h2>
+            <div class="row">
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="portfolio-item">
+                        <img src="/api/placeholder/400/300" alt="Portfolio">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a class="navbar-brand" href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        UI Portfolio
+                    </a>
+                    <div class="footer-contact">
+                        <i class="fas fa-phone"></i>
+                        <span>+12 345 678 900</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@example.com</span>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>208 Avenue street, UK - 62617</span>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-end mt-4 mt-lg-0">
+                    <div class="copyright">
+                        © 2022 UI Portfolio. All Rights Reserved
+                    </div>
+                    <div class="footer-social mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

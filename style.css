@@ -1,27 +1,97 @@
-/* assets/css/style.css */
+/* Hero Section */
+header {
+  background: url('your-hero-image.jpg') no-repeat center center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-/* General */
-body {
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  /* Hero Section */
-  .hero h1 {
-    font-size: 3rem;
-  }
-  
-  .hero h2 {
-    font-size: 2rem;
-  }
-  
-  /* Card Hover */
-  .card:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-  }
-  
-  /* Footer */
-  footer a {
-    text-decoration: none;
-  }
-  
+header::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header h1, header h2, header p {
+  margin: 10px 0;
+}
+
+/* About Section */
+section {
+  padding: 60px 0;
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Services Section */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.services .card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.services .card:hover {
+  transform: translateY(-10px);
+}
+
+/* Skills Section */
+.skills-list li {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* Counters */
+.counters {
+  text-align: center;
+}
+
+.counters h2 {
+  font-size: 48px;
+  color: #28a745;
+}
+
+.counters p {
+  font-size: 18px;
+}
+
+/* Portfolio Section */
+.portfolio img {
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #212529;
+  color: white;
+  padding: 30px 0;
+}
+
+footer p {
+  margin: 5px 0;
+}
