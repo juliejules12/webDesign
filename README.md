@@ -47,9 +47,9 @@
 >
 > ## 🤝 Team Members
 >
-> - Julieta Ayesa
-> - Teddy Anangwe
-> - [Team Member 3]
+> - Julieta Ayesa-ayesajuliee@gmail.com
+> - Teddy Anangwe-teddyanangwe@gmail.com
+>   
 >
 > ---
 >
