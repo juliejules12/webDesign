@@ -48,7 +48,7 @@
 > ## 🤝 Team Members
 >
 > - Julieta Ayesa
-> - [Team Member 2]
+> - Teddy Anangwe
 > - [Team Member 3]
 >
 > ---
